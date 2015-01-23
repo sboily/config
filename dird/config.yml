@@ -1,0 +1,73 @@
+source_config_dir: /etc/xivo-dird/sources.d
+rest_api:
+       wsgi_socket: /var/run/xivo-dird/xivo-dird.sock
+
+enabled_plugins:
+    backends:
+        - xivo
+        - csv
+    services:
+        - lookup
+    views:
+        - default_json
+        - headers_view
+
+views:
+    displays:
+        default_display:
+            -
+                title: Firstname
+                default: Unknown
+                field: firstname
+            -
+                title: Lastname
+                default: Unknown
+                field: lastname
+            -
+                title: Number
+                default:
+                field: exten
+            -
+                title: Description
+                default:
+                field: description
+    profile_to_display:
+        default: default_display
+        internal-sylvain: default_display
+        intern: default_display
+        default_ac: default_display
+
+services:
+    lookup:
+        default:
+            sources:
+                - xivo_quebec
+                - xivo_sylvain
+                - xivo_limonest
+                - xivo_suresnes
+                - xivo_rennes
+                - xivo_toulouse
+            timeout: 0.5
+        default_ac:
+            sources:
+                - xivo_quebec
+                - xivo_sylvain
+                - xivo_limonest
+                - xivo_suresnes
+                - xivo_rennes
+                - xivo_toulouse
+            timeout: 0.5
+        internal-sylvain:
+            sources:
+                - xivo_sylvain
+                - my_csv
+        intern:
+            sources:
+                - xivo_quebec
+                - xivo_sylvain
+                - xivo_limonest
+                - xivo_suresnes
+                - xivo_rennes
+                - xivo_toulouse
+                - my_csv
+            timeout: 0.5

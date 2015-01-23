@@ -1,0 +1,30 @@
+# Dird (Directory daemon) connection informations.
+dird:
+  host: 192.168.32.41
+  port: 9489
+  version: 0.1
+
+# Event bus (AMQP) connection informations.
+bus:
+  host: 192.168.111.51
+  port: 5672
+  username: xivo
+  password: xivo
+  exchange_name: xivo
+  exchange_type: topic
+  exchange_durable: True
+  routing_keys:
+    user_status: status.user
+    endpoint_status: status.endpoint
+    agent_status: status.agent
+    call_form_result: call_form_result
+
+# Database connection informations.
+db_uri: postgresql://asterisk:proformatique@192.168.111.51/asterisk
+
+# AMI asterisk
+ipbx_connection:
+  ipaddress: 192.168.111.51
+  ipport: 5038
+  username: xivo_cti_user
+  password: phaickbebs9

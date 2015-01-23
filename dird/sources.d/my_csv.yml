@@ -1,0 +1,13 @@
+type: csv
+name: my_csv
+file: /etc/xivo-dird/my_contacts.csv
+unique_columns:
+    - fn
+    - ln
+searched_columns:
+    - fn
+    - ln
+source_to_display_columns:
+    ln: lastname
+    fn: firstname
+    num: exten
