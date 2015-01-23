@@ -6,6 +6,7 @@ enabled_plugins:
     backends:
         - xivo
         - csv
+        - ldap
     services:
         - lookup
     views:
@@ -47,6 +48,7 @@ services:
                 - xivo_suresnes
                 - xivo_rennes
                 - xivo_toulouse
+                - my_ldap
             timeout: 0.5
         default_ac:
             sources:
