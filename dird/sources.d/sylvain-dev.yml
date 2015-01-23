@@ -1,0 +1,12 @@
+type: xivo
+name: xivo_sylvain_dev
+searched_columns:
+  - firstname
+  - lastname
+confd_config:
+  host: 192.168.111.51
+  port: 9486
+  username: xivo
+  password: xivo
+  version: 1.1
+

@@ -20,14 +20,17 @@ views:
                 title: Firstname
                 default: Unknown
                 field: firstname
+                type: name
             -
                 title: Lastname
                 default: Unknown
                 field: lastname
+                type: name
             -
                 title: Number
                 default:
                 field: exten
+                type: number
             -
                 title: Description
                 default:
@@ -44,6 +47,7 @@ services:
             sources:
                 - xivo_quebec
                 - xivo_sylvain
+                - xivo_sylvain_dev
                 - xivo_limonest
                 - xivo_suresnes
                 - xivo_rennes
