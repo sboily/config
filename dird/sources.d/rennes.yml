@@ -1,0 +1,12 @@
+type: xivo
+name: xivo_rennes
+searched_columns:
+  - firstname
+  - lastname
+confd_config:
+  host: 192.168.51.252
+  port: 9486
+  username: dird
+  password: dird
+  version: 1.1
+
