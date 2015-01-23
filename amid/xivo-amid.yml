@@ -3,10 +3,10 @@ publish_ami_events: True
 config_path: /etc/xivo/xivo-amid
 
 ami:
-    host: 192.168.113.99
+    host: 192.168.32.41
     port: 5038
-    username: xivo_amid
-    password: eeCho8ied3u
+    username: xivo_cti_user
+    password: phaickbebs9
 
 bus:
     host: 192.168.32.41
