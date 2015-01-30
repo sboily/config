@@ -6,10 +6,10 @@ dird:
 
 # Event bus (AMQP) connection informations.
 bus:
-  host: 192.168.111.51
+  host: 192.168.32.41
   port: 5672
-  username: xivo
-  password: xivo
+  username: sylvain
+  password: sylvain
   exchange_name: xivo
   exchange_type: topic
   exchange_durable: True
@@ -20,11 +20,11 @@ bus:
     call_form_result: call_form_result
 
 # Database connection informations.
-db_uri: postgresql://asterisk:proformatique@192.168.111.51/asterisk
+db_uri: postgresql://asterisk:proformatique@192.168.1.200/asterisk
 
 # AMI asterisk
 ipbx_connection:
-  ipaddress: 192.168.111.51
+  ipaddress: 192.168.1.200
   ipport: 5038
   username: xivo_cti_user
   password: phaickbebs9
