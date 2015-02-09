@@ -35,6 +35,11 @@ views:
                 title: Description
                 default:
                 field: description
+            -
+                title: Agent
+                default:
+                field: agent
+                type: agent
     profile_to_display:
         default: default_display
         internal-sylvain: default_display
