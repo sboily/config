@@ -45,30 +45,40 @@ agentd:
   image: quintana/agentd
   ports:
    - "9486:9486"
+  volumes:
+   - agentd:/etc/xivo-agentd/conf.d
 confgend:
   image: quintana/confgend
   ports:
    - "8669:8669"
   links:
    - db
+  volumes:
+   - confgend:/etc/xivo/
 sysconfd:
   image: quintana/sysconfd
   ports:
    - "8668:8668"
   links:
    - bus
+  volumes:
+   - sysconfd:/etc/xivo/sysconfd
 provd:
   image: quintana/provd
   ports:
    - "8667:8667"
    - "8666:8666"
    - "69:69/udp"
+  volumes:
+   - provd:/etc/xivo/provd/
 dxtora:
   image: quintana/dxtora
   volumes:
    - dxtora:/etc/xivo-dxtora/
 calllogd:
   image: quintana/call-logd
+  volumes:
+   - call-logd:/etc/xivo-call-logs/conf.d
 amid:
   image: quintana/amid
   links:
@@ -86,6 +96,10 @@ webi:
    - sysconfd
    - confd
    - provd
+  volumes:
+   - webi/nginx:/etc/nginx/sites-enabled
+   - webi/ssl:/etc/nginx/ssl
+   - webi/etc:/etc/xivo/web-interface
 asterisk:
   image: quintana/asterisk11
   ports:
@@ -95,6 +109,9 @@ asterisk:
    - confgend
   expose:
    - "5038"
+  volumes:
+   - odbc:/etc/odbc/
+   - confgend-client:/etc/xivo-confgend-client/
 db:
   image: postgres
   expose:
