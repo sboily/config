@@ -1,6 +1,6 @@
 type: csv
 name: my_csv
-file: /etc/xivo-dird/my_contacts.csv
+file: /tmp/csv/my_contacts.csv
 unique_columns:
     - fn
     - ln
