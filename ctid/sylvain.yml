@@ -1,3 +1,8 @@
+# Rest API
+rest_api:
+  listen: 0.0.0.0
+  port: 9495
+
 # Dird (Directory daemon) connection informations.
 dird:
   host: 192.168.32.41
@@ -20,11 +25,11 @@ bus:
     call_form_result: call_form_result
 
 # Database connection informations.
-db_uri: postgresql://asterisk:proformatique@192.168.1.200/asterisk
+db_uri: postgresql://asterisk:proformatique@192.168.113.99/asterisk
 
 # AMI asterisk
 ipbx_connection:
-  ipaddress: 192.168.1.200
+  ipaddress: 192.168.113.99
   ipport: 5038
   username: xivo_cti_user
   password: phaickbebs9
