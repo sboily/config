@@ -32,7 +32,7 @@ confd:
    - bus
    - provd
   volumes:
-   - confd:/etc/xivo-confd/conf.d
+   - confd:/etc/xivo-confd/
 agid:
   image: quintana/agid
   ports:
