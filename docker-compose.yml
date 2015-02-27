@@ -32,7 +32,7 @@ confd:
    - bus
    - provd
   volumes:
-   - confd:/etc/xivo-confd/
+   - confd:/etc/xivo-confd/conf.d
 agid:
   image: quintana/agid
   ports:
@@ -80,7 +80,7 @@ dxtora:
 calllogd:
   image: quintana/call-logd
   volumes:
-   - call-logd:/etc/xivo-call-logs/conf.d
+   - call-logd:/etc/xivo-call-logd/conf.d
 amid:
   image: quintana/amid
   links:
