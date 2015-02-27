@@ -45,8 +45,6 @@ agid:
    - agid/mail.txt:/etc/xivo/mail.txt
 agentd:
   image: quintana/agentd
-  ports:
-   - "9486:9486"
   volumes:
    - agentd:/etc/xivo-agentd/conf.d
 confgend:
