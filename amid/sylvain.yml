@@ -1,15 +1,15 @@
-uuid: my-uuid
+uuid: sylvain-uuid
 ami:
-    host: 192.168.1.249
+    host: 10.41.0.104
     port: 5038
     username: xivo_cti_user
     password: phaickbebs9
 
 bus:
-    host: 192.168.32.41
+    host: 10.41.0.104
     port: 5672
-    username: sylvain
-    password: sylvain
+    username: xivo
+    password: xivo
     vhost: /
     exchange_name: xivo
     exchange_type: topic
