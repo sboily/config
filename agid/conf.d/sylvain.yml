@@ -7,9 +7,9 @@ listen_port: 4573
 
 # Event bus (AMQP) connection informations
 bus:
-  username: xivo
-  password: xivo
-  host: 10.41.0.104
+  username: guest
+  password: guest
+  host: bus
   port: 5672
   exchange_name: xivo
   exchange_type: topic

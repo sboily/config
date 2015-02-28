@@ -79,6 +79,8 @@ calllogd:
   image: quintana/call-logd
   volumes:
    - call-logd:/etc/xivo-call-logd/conf.d
+  links:
+   - bus
 amid:
   image: quintana/amid
   links:
@@ -117,6 +119,8 @@ db:
   expose:
    - "5432"
 bus:
-  image: dockerfile/rabbitmq
+  image: quintana/rabbitmq
   expose:
    - "5672"
+   - "15672:15672"
+   - "15674:15674"

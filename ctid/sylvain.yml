@@ -11,10 +11,10 @@ dird:
 
 # Event bus (AMQP) connection informations.
 bus:
-  host: 10.41.0.104
+  host: bus
   port: 5672
-  username: xivo
-  password: xivo
+  username: guest
+  password: guest
   exchange_name: xivo
   exchange_type: topic
   exchange_durable: True
