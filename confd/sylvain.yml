@@ -1,10 +1,6 @@
 # REST API server
 rest_api:
-
-    # Listening address
     listen: 0.0.0.0
-
-    # Listening port
     port: 9486
 
 # Event bus (AMQP) connection informations
@@ -17,4 +13,4 @@ bus:
     exchange_type: topic
     exchange_durable: True
 
-db_uri: postgresql://asterisk:proformatique@10.41.0.104/asterisk
+db_uri: postgresql://asterisk:proformatique@db/asterisk

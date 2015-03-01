@@ -5,7 +5,7 @@ rest_api:
 
 # Dird (Directory daemon) connection informations.
 dird:
-  host: 192.168.32.41
+  host: dird
   port: 9489
   version: 0.1
 
@@ -25,11 +25,11 @@ bus:
     call_form_result: call_form_result
 
 # Database connection informations.
-db_uri: postgresql://asterisk:proformatique@10.41.0.104/asterisk
+db_uri: postgresql://asterisk:proformatique@db/asterisk
 
 # AMI asterisk
 ipbx_connection:
-  ipaddress: 10.41.0.104
+  ipaddress: asterisk
   ipport: 5038
   username: xivo_cti_user
   password: phaickbebs9

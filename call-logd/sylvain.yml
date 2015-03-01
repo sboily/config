@@ -1,5 +1,5 @@
 # Database connection informations.
-db_uri: postgresql://asterisk:proformatique@10.41.0.104/asterisk
+db_uri: postgresql://asterisk:proformatique@db/asterisk
 
 # Event bus (AMQP) connection informations
 bus:

@@ -47,6 +47,10 @@ agentd:
   image: quintana/agentd
   volumes:
    - agentd:/etc/xivo-agentd/conf.d
+  links:
+   - db
+   - bus
+   - asterisk
 confgend:
   image: quintana/confgend
   ports:
@@ -114,19 +118,30 @@ asterisk:
   volumes:
    - odbc:/etc/odbc/
    - confgend-client:/etc/xivo-confgend-client/
+   - asterisk/manager.conf:/etc/asterisk/manager.conf
 db:
   image: postgres
   expose:
    - "5432"
-  volumes:
-   - db:/docker-entrypoint-initdb.d
   environment:
    - POSTGRES_USER=asterisk
    - POSTGRES_PASSWORD=proformatique
    - POSTGRES_DB=asterisk
+  volumes:
+   - /var/run/postgresql/
 bus:
   image: quintana/rabbitmq
   expose:
    - "5672"
    - "15672:15672"
    - "15674:15674"
+managedb:
+  image: quintana/manage-db
+  external_links:
+   - config_db_1:db
+  command: xivo-init-db --init
+  volumes:
+   - manage-db/conf.d:/etc/xivo-dao/conf.d/
+   - manage-db/alembic.ini:/usr/share/xivo-manage-db/alembic.ini
+  volumes_from:
+   - db
