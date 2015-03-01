@@ -121,9 +121,9 @@ db:
   volumes:
    - db:/docker-entrypoint-initdb.d
   environment:
-   - POSTGRES_USER: "asterisk"
-   - POSTGRES_PASSWORD: "proformatique"
-   - POSTGRES_DB: "asterisk"
+   - POSTGRES_USER=asterisk
+   - POSTGRES_PASSWORD=proformatique
+   - POSTGRES_DB=asterisk
 bus:
   image: quintana/rabbitmq
   expose:
