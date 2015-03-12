@@ -2,6 +2,10 @@ uuid: sylvain-uuid
 # Database connection informations.
 db_uri: postgresql://asterisk:proformatique@db/asterisk
 
+rest_api:
+  listen : 0.0.0.0
+  port : 9493
+
 # AMI (Asterisk Manager Interface) connection informations.
 ami:
   host: asterisk
@@ -16,6 +20,3 @@ bus:
   port: 5672
   exchange_name: xivo
   exchange_type: topic
-  exchange_durable: True
-  routing_keys:
-    agent_status: status.agent
