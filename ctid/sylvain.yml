@@ -3,6 +3,11 @@ rest_api:
   listen: 0.0.0.0
   port: 9495
 
+# Agentd
+agentd:
+  host: agentd
+  timeout: 3
+
 # Dird (Directory daemon) connection informations.
 dird:
   host: dird
@@ -17,12 +22,6 @@ bus:
   password: guest
   exchange_name: xivo
   exchange_type: topic
-  exchange_durable: True
-  routing_keys:
-    user_status: status.user
-    endpoint_status: status.endpoint
-    agent_status: status.agent
-    call_form_result: call_form_result
 
 # Database connection informations.
 db_uri: postgresql://asterisk:proformatique@db/asterisk
