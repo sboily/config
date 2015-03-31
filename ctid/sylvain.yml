@@ -14,6 +14,11 @@ dird:
   port: 9489
   version: 0.1
 
+# xivo-provd connection informations.
+provd:
+  host: provd
+  port: 8666
+
 # Event bus (AMQP) connection informations.
 bus:
   host: bus
