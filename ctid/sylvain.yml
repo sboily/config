@@ -8,6 +8,11 @@ agentd:
   host: agentd
   timeout: 3
 
+# Provd
+provd:
+  host: localhost
+  port: 8666
+
 # Dird (Directory daemon) connection informations.
 dird:
   host: dird

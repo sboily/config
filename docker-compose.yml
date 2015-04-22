@@ -26,7 +26,7 @@ dird:
 confd:
   image: quintana/confd
   ports:
-   - "9486:9486"
+   - "9487:9487"
   links:
    - db
    - bus

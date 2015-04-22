@@ -1,9 +1,14 @@
-# REST API server
 rest_api:
     listen: 0.0.0.0
-    port: 9486
+    port: 9487
+    cors:
+        enabled: true
+        allow_headers: Content-Type
 
-# Event bus (AMQP) connection informations
+provd:
+    host: provd
+    port: 8666
+
 bus:
     username: guest
     password: guest
