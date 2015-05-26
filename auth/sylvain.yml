@@ -1,0 +1,24 @@
+general:
+  listen: 0.0.0.0
+  port: 9497
+  debug: true
+  cors:
+    enabled: True
+    allow_headers: Content-Type, authorization
+
+
+plugins:
+  - xivo_user
+
+amqp:
+  uri: amqp://sylvain:sylvain@192.168.32.41:5672/
+  exchange_name: xivo
+  exchange_type: topic
+
+consul:
+  host: 192.168.32.248
+  port: 8500
+  token: '4b1948a9cb236b27c8f42e2a87d9132497ffa4d9eba20511f5c90468701e5155'
+
+# Database connection informations.
+db_uri: postgresql://asterisk:proformatique@192.168.32.248/asterisk
