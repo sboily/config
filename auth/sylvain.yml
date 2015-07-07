@@ -7,8 +7,9 @@ general:
     allow_headers: Content-Type, authorization
 
 
-plugins:
+enabled_plugins:
   - xivo_user
+  - ldap
 
 amqp:
   uri: amqp://sylvain:sylvain@192.168.32.41:5672/
