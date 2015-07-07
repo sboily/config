@@ -3,8 +3,7 @@ name: my_ldap
 ldap_uri: ldap://192.168.32.252
 ldap_base_dn: ou=people,dc=lan-quebec,dc=avencall,dc=com
 ldap_network_timeout: 0.5
-unique_columns:
-    - entryUUID
+unique_columns: entryUUID
 searched_columns:
     - cn
 source_to_display_columns:

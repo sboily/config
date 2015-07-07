@@ -1,14 +1,16 @@
-rest_api:
-    listen: 0.0.0.0
-    port: 9489
+auth:
+    host: 192.168.32.248
+
+consul:
+    host: 192.168.32.41
 
 enabled_plugins:
     backends:
         - xivo
-        - csv
         - ldap
     services:
         - lookup
+        - favorites
     views:
         - default_json
         - headers_view
@@ -17,32 +19,31 @@ views:
     displays:
         default_display:
             -
-                title: Firstname
+                title: Prénom
                 default: Unknown
                 field: firstname
                 type: name
             -
-                title: Lastname
+                title: Nom
                 default: Unknown
                 field: lastname
                 type: name
             -
-                title: Number
+                title: Numéro
                 default:
                 field: exten
                 type: number
-            -
-                title: Description
-                default:
-                field: description
             -
                 title: Agent
                 default:
                 field: agent
                 type: agent
+            -
+                title: Favoris
+                field: favorite
+                type: favorite
     profile_to_display:
         default: default_display
-        internal-sylvain: default_display
         intern: default_display
         default_ac: default_display
 
@@ -51,8 +52,6 @@ services:
         default:
             sources:
                 - xivo_quebec
-                - xivo_sylvain
-                - xivo_sylvain_dev
                 - xivo_limonest
                 - xivo_suresnes
                 - xivo_rennes
@@ -62,16 +61,40 @@ services:
         default_ac:
             sources:
                 - xivo_quebec
-                - xivo_sylvain
                 - xivo_limonest
                 - xivo_suresnes
                 - xivo_rennes
                 - xivo_toulouse
+                - my_ldap
             timeout: 0.5
-        internal-sylvain:
+        intern:
             sources:
-                - xivo_sylvain
-                - my_csv
+                - xivo_quebec
+                - xivo_limonest
+                - xivo_suresnes
+                - xivo_rennes
+                - xivo_toulouse
+                - my_ldap
+            timeout: 0.5
+    favorites:
+        default:
+            sources:
+                - xivo_quebec
+                - xivo_limonest
+                - xivo_suresnes
+                - xivo_rennes
+                - xivo_toulouse
+                - my_ldap
+            timeout: 0.5
+        default_ac:
+            sources:
+                - xivo_quebec
+                - xivo_limonest
+                - xivo_suresnes
+                - xivo_rennes
+                - xivo_toulouse
+                - my_ldap
+            timeout: 0.5
         intern:
             sources:
                 - xivo_quebec
@@ -80,5 +103,5 @@ services:
                 - xivo_suresnes
                 - xivo_rennes
                 - xivo_toulouse
-                - my_csv
+                - my_ldap
             timeout: 0.5

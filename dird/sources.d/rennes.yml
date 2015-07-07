@@ -1,9 +1,11 @@
 type: xivo
 name: xivo_rennes
+unique_column: id
 searched_columns:
   - firstname
   - lastname
 confd_config:
+  https: True
   host: 192.168.51.252
   port: 9486
   username: dird
