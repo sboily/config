@@ -34,6 +34,11 @@ views:
                 field: exten
                 type: number
             -
+                title: Mobile
+                default:
+                field: mobile_phone_number
+                type: mobile
+            -
                 title: Agent
                 default:
                 field: agent
