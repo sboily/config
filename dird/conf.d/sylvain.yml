@@ -8,12 +8,15 @@ enabled_plugins:
     backends:
         - xivo
         - ldap
+        - personal
     services:
         - lookup
         - favorites
+        - personal
     views:
         - default_json
         - headers_view
+        - personal_view
 
 views:
     displays:
@@ -47,6 +50,11 @@ views:
                 title: Favoris
                 field: favorite
                 type: favorite
+            -
+                title: Personnel
+                field: personal
+                type: personal
+
     profile_to_display:
         default: default_display
         intern: default_display
@@ -90,6 +98,7 @@ services:
                 - xivo_rennes
                 - xivo_toulouse
                 - my_ldap
+                - personal
             timeout: 0.5
         default_ac:
             sources:
@@ -99,6 +108,7 @@ services:
                 - xivo_rennes
                 - xivo_toulouse
                 - my_ldap
+                - personal
             timeout: 0.5
         intern:
             sources:
@@ -109,4 +119,5 @@ services:
                 - xivo_rennes
                 - xivo_toulouse
                 - my_ldap
+                - personal
             timeout: 0.5
