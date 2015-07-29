@@ -33,13 +33,11 @@ views:
                 type: name
             -
                 title: Numéro
-                default:
-                field: exten
+                field: number
                 type: number
             -
                 title: Mobile
-                default:
-                field: mobile_phone_number
+                field: mobile
                 type: mobile
             -
                 title: Agent
