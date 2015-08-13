@@ -1,12 +1,18 @@
 type: xivo
 name: xivo_quebec
+unique_column: id
 searched_columns:
   - firstname
   - lastname
+format_columns:
+    number: "{exten}"
+    mobile: "{mobile_phone_number}"
 confd_config:
+  https: True
   host: 192.168.32.248
   port: 9486
   username: sylvain
-  password: sylvain
+  password: password
   version: 1.1
+  timeout: 4
 
