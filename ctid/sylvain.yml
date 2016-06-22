@@ -1,44 +1,45 @@
-# Rest API
 rest_api:
-  listen: 0.0.0.0
-  port: 9495
+  http:
+    listen: 0.0.0.0
 
-# Agentd
 agentd:
-  host: agentd
-  timeout: 3
+  host: 10.41.0.2
+  verify_certificate: False
 
-# Provd
 provd:
-  host: localhost
-  port: 8666
+  host: 10.41.0.2
 
-# Dird (Directory daemon) connection informations.
 dird:
-  host: dird
-  port: 9489
-  version: 0.1
+  host: 10.41.0.2
+  verify_certificate: False
 
-# xivo-provd connection informations.
-provd:
-  host: provd
-  port: 8666
+confd:
+  host: 10.41.0.2
+  verify_certificate: False
 
-# Event bus (AMQP) connection informations.
 bus:
-  host: bus
-  port: 5672
-  username: guest
-  password: guest
-  exchange_name: xivo
-  exchange_type: topic
+  host: 10.41.0.2
+  username: xivo
+  password: xivo
 
-# Database connection informations.
-db_uri: postgresql://asterisk:proformatique@db/asterisk
+auth:
+  host: 10.41.0.2
+  key_file: /etc/xivo-ctid/conf.d/key.yml
+  verify_certificate: False
 
-# AMI asterisk
-ipbx_connection:
-  ipaddress: asterisk:
-  ipport: 5038
+db_uri: postgresql://asterisk:proformatique@10.41.0.2/asterisk
+
+ami:
+  host: 10.41.0.2
+  port: 5038
   username: xivo_cti_user
   password: phaickbebs9
+
+consul:
+  scheme: https
+  host: 10.41.0.2
+  token: 9380b501849d0b5ebca6a8988ccb73c9589a749bb12be715be85fe02b0e9358b
+  verify: False
+
+service_discovery:
+  advertise_address: auto
