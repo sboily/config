@@ -1,0 +1,21 @@
+auth:
+    host: 192.168.1.124
+    verify_certificate: false
+    key_file: /etc/xivo-ctid-ng/conf.d/key.yml
+
+ami:
+    host: 192.168.1.124
+    verify_certificate: false
+
+confd:
+    host: 192.168.1.124
+    verify_certificate: false
+
+bus:
+    username: xivo
+    password: xivo
+    host: 192.168.1.124
+
+ari:
+  connection:
+    base_url: http://192.168.1.124:5039
